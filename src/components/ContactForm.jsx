@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addContact } from '../redux/contactSlice';
+import { addContact } from './API';
 import './App.module.css';
 
 export const ContactForm = () => {
@@ -12,7 +12,8 @@ export const ContactForm = () => {
   const onSubmit = event => {
     event.preventDefault();
     if (!name.trim() || !number.trim()) return;
-    dispatch(addContact(name, number));
+    dispatch(addContact({name, number}));
+
     setName('');
     setNumber('');
   };

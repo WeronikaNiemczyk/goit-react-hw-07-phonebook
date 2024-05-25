@@ -8,12 +8,9 @@ const filtersSlice = createSlice({
     setStatusFilter(state, action) {
       state.inputValue = action.payload;
     },
-    prepare: inputValue => {
-      return {
-        payload: inputValue,
-      };
+    
     },
   },
-});
+);
 export const { setStatusFilter } = filtersSlice.actions;
 export const filterReducer = filtersSlice.reducer;
